@@ -27,8 +27,8 @@ if(file.exists()) {
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 26 // CHANGED THIS
+    buildToolsVersion "27.0.3" // CHANGED THIS
 
     defaultConfig {
         minSdkVersion 16 // RN's minimum version
@@ -61,43 +61,43 @@ repositories {
 
 dependencies {
     //noinspection GradleDynamicVersion
-    compile 'com.facebook.react:react-native:+'
+    implementation 'com.facebook.react:react-native:+' // CHANGED THIS
 
     // ExoPlayer Core
     if(exoplayer) {
-        compile 'com.google.android.exoplayer:exoplayer-core:r2.4.3'
+        implementation 'com.google.android.exoplayer:exoplayer-core:r2.4.3' // CHANGED THIS
     } else {
         provided 'com.google.android.exoplayer:exoplayer-core:r2.4.3'
     }
 
     // ExoPlayer DASH
     if(dash) {
-        compile 'com.google.android.exoplayer:exoplayer-dash:r2.4.3'
+        implementation 'com.google.android.exoplayer:exoplayer-dash:r2.4.3' // CHANGED THIS
     } else {
         provided 'com.google.android.exoplayer:exoplayer-dash:r2.4.3'
     }
 
     // ExoPlayer HLS
     if(hls) {
-        compile 'com.google.android.exoplayer:exoplayer-hls:r2.4.3'
+        implementation 'com.google.android.exoplayer:exoplayer-hls:r2.4.3' // CHANGED THIS
     } else {
         provided 'com.google.android.exoplayer:exoplayer-hls:r2.4.3'
     }
 
     // ExoPlayer SmoothStreaming
     if(smoothstreaming) {
-        compile 'com.google.android.exoplayer:exoplayer-smoothstreaming:r2.4.3'
+        implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:r2.4.3' // CHANGED THIS
     } else {
         provided 'com.google.android.exoplayer:exoplayer-smoothstreaming:r2.4.3'
     }
 
     // Caching (for the default Android player)
     if(cache && !exoplayer) {
-        compile 'com.danikula:videocache:2.7.0'
+        implementation 'com.danikula:videocache:2.7.0' // CHANGED THIS
     } else {
         provided 'com.danikula:videocache:2.7.0'
     }
 
     // Make sure we're using at least the support library 23.2.0, not 23.0.1
-    compile 'com.android.support:appcompat-v7:23.2.0'
+    implementation 'com.android.support:appcompat-v7:23.2.0' // CHANGED THIS
 }

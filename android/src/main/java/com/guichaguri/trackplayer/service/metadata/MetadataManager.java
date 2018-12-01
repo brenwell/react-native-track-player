@@ -308,7 +308,16 @@ public class MetadataManager {
     }
 
     private void updateNotification() {
-        int state = manager.getPlayback().getState();
+
+        ExoPlayback playback = manager.getPlayback();
+
+        if (playback == null)
+        {
+            removeNotifications();
+            return;
+        }
+
+        int state = playback.getState();
         if (Utils.isStopped(state)) {
             removeNotifications();
             return;
